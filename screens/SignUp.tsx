@@ -163,6 +163,7 @@ const SignUp = () => {
         />
       </View>
     </View>
+
   );
 };
 
@@ -185,7 +186,7 @@ const styles = StyleSheet.create({
   },
 
   linkText: {
-    padding: 10,
+    padding: 15,
     color: "white",
   },
 
