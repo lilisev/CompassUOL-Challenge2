@@ -134,7 +134,7 @@ const SignUp = () => {
         </TouchableOpacity>
           </View>
     </View>
-  );
+  ); 
   };
 export default SignUp;
 
@@ -157,7 +157,7 @@ const styles = StyleSheet.create({
   },
 
   linkText: {
-    padding: 10,
+    padding: 15,
     color: "white",
   },
 
