@@ -53,7 +53,7 @@ const Welcome = () => {
 
   return (
     <View style={Style.container}>
-        <Text style={Style.title}>WELCOME</Text>
+      <Text style={Style.title}>WELCOME</Text>
       <View style={Style.inputContainer}>
         <View style={Style.cardContainer}>
           <CardInput
@@ -62,6 +62,10 @@ const Welcome = () => {
             onChangeText={setEmail}
             error={!!emailError}
             icon={require("../assets/images/mail.png")}
+            style={[
+              { marginBottom: 10 },
+              passwordError ? { borderColor: "red" } : null,
+            ]}
           />
           {emailError ? (
             <Text style={styles.errorMessage}>{emailError}</Text>
@@ -75,6 +79,10 @@ const Welcome = () => {
             secureTextEntry
             error={!!passwordError}
             icon={require("../assets/images/lock.png")}
+            style={[
+              { marginBottom: 10 },
+              passwordError ? { borderColor: "red" } : null,
+            ]}
           />
           {passwordError ? (
             <Text style={styles.errorMessage}>{passwordError}</Text>
@@ -82,7 +90,7 @@ const Welcome = () => {
         </View>
         <CardButton text="LOGIN" onPress={handleLogin} style={Style.button} />
       </View>
-      <View style={styles.footer}>
+      <View style={Style.footer}>
         <Text style={styles.footerText}>Don't have an account? </Text>
         <CardLink
           text="Sign Up"
@@ -95,29 +103,14 @@ const Welcome = () => {
 };
 
 const styles = StyleSheet.create({
-  
-  
-
   errorMessage: {
     color: Colors.error,
-    marginBottom: 10,
     paddingLeft: 15,
   },
 
   buttonText: {
     color: "#fff",
     fontSize: 16,
-  },
-  footer: {
-    justifyContent: "center",
-    alignItems: "center",
-    padding: 15,
-    width: "100%",
-    flexDirection: "row",
-    position: "absolute",
-    bottom: 5,
-    borderTopWidth: 1,
-    borderTopColor: Colors.primary1,
   },
 
   footerText: {
