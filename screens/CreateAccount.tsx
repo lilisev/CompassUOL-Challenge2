@@ -1,13 +1,14 @@
-import React from 'react';
-import { View, Text, StyleSheet} from 'react-native';
-import Colors from '../constants/colors';
-import { useNavigation, NavigationProp } from '@react-navigation/native';
-
+import React from "react";
+import { View, Text, StyleSheet } from "react-native";
+import Colors from "../constants/colors";
+import { useNavigation, NavigationProp } from "@react-navigation/native";
 
 const CreateAccount = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>CONGRATULATIONS!! You unlocked the next level!!</Text>
+      <Text style={styles.title}>
+        CONGRATULATIONS!! You unlocked the next level!!
+      </Text>
       <Text style={styles.title}>LET´S GO!</Text>
     </View>
   );
@@ -17,7 +18,7 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: Colors.colorBG,
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: "center",
   },
   title: {
     paddingTop: 20,
@@ -25,10 +26,9 @@ const styles = StyleSheet.create({
     paddingLeft: 20,
     color: Colors.primary1,
     fontSize: 32,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginBottom: 30,
-    textAlign: 'center',
-
+    textAlign: "center",
   },
 });
 

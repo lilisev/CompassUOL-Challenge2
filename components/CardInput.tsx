@@ -1,9 +1,7 @@
-import React from 'react';
-import { TextInput, StyleSheet, Image, View } from 'react-native';
+import React from "react";
+import { TextInput, StyleSheet, Image, View } from "react-native";
 
-
-import Colors from '../constants/colors';
-
+import Colors from "../constants/colors";
 
 type InputProps = {
   placeholder: string;
@@ -27,52 +25,48 @@ const CardInput = ({
   return (
     <View style={[styles.inputContainer, style, error && styles.inputError]}>
       <View style={styles.iconPlaceholder}>
-      {icon && <Image source={icon} style={styles.inputIcon} />}
-      <TextInput
-        style={{flex: 1, paddingLeft: 10}}
-        placeholder={placeholder}
-        value={value}
-        onChangeText={onChangeText}
-        secureTextEntry={secureTextEntry}
-      />
-    </View>
+        {icon && <Image source={icon} style={styles.inputIcon} />}
+        <TextInput
+          style={{ flex: 1, paddingLeft: 10 }}
+          placeholder={placeholder}
+          value={value}
+          onChangeText={onChangeText}
+          secureTextEntry={secureTextEntry}
+        />
+      </View>
     </View>
   );
 };
 
-
 const styles = StyleSheet.create({
   inputContainer: {
-    width: '90%',
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
+    width: "90%",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
     height: 50,
     borderWidth: 1,
     borderColor: Colors.colorInput,
     borderRadius: 30,
     marginBottom: 20,
     color: Colors.colorInputPlaceHolder,
-    backgroundColor: Colors.colorInput
+    backgroundColor: Colors.colorInput,
   },
 
   inputError: {
-    color: Colors.error
+    color: Colors.error,
   },
 
-inputIcon: {
-  paddingLeft: 20,
-  tintColor: Colors.primary1
-},
+  inputIcon: {
+    paddingLeft: 20,
+    tintColor: Colors.primary1,
+  },
 
-iconPlaceholder: {
-  width: '90%',
-  flexDirection: 'row',
-  alignItems:'center'
-}
-
-
-
+  iconPlaceholder: {
+    width: "90%",
+    flexDirection: "row",
+    alignItems: "center",
+  },
 });
 
 export default CardInput;

@@ -1,8 +1,7 @@
-import React from 'react';
-import { TouchableOpacity, Text, StyleSheet } from 'react-native';
+import React from "react";
+import { TouchableOpacity, Text, StyleSheet } from "react-native";
 
-import Style from '../constants/style';
-import Colors from '../constants/colors';
+import Style from "../constants/style";
 
 interface ButtonProps {
   text: string;
@@ -19,9 +18,8 @@ const CardButton: React.FC<ButtonProps> = ({ text, onPress, style }) => {
 };
 
 const styles = StyleSheet.create({
- 
   buttonText: {
-    color: '#fff',
+    color: "#fff",
     fontSize: 16,
   },
 });

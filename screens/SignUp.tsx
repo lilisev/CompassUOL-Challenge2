@@ -1,29 +1,24 @@
-import React, { useState } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
-import { useNavigation} from '@react-navigation/native';
-import { MaterialIcons } from '@expo/vector-icons';
+import React, { useState } from "react";
+import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import { MaterialIcons } from "@expo/vector-icons";
 
-
-import Style from '../constants/style';
-import Colors from '../constants/colors';
-import Button from '../components/CardButton';
-import CardLink from '../components/CardLink';
-import CardInput from '../components/CardInput';
-
+import Style from "../constants/style";
+import Colors from "../constants/colors";
+import Button from "../components/CardButton";
+import CardInput from "../components/CardInput";
 
 const SignUp = () => {
   const navigation = useNavigation();
 
-  const [email, setEmail] = useState<string>('');
-  const [username, setUsername] = useState<string>('');
-  const [password, setPassword] = useState<string>('');
+  const [email, setEmail] = useState<string>("");
+  const [username, setUsername] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
   const [acceptedTerms, setAcceptedTerms] = useState<boolean>(false);
-  const [emailError, setEmailError] = useState<string>('');
-  const [usernameError, setUsernameError] = useState<string>('');
-  const [passwordError, setPasswordError] = useState<string>('');
-  let [acceptedTermsError, setAcceptedTermsError] = useState<string>('');
-
-
+  const [emailError, setEmailError] = useState<string>("");
+  const [usernameError, setUsernameError] = useState<string>("");
+  const [passwordError, setPasswordError] = useState<string>("");
+  let [acceptedTermsError, setAcceptedTermsError] = useState<string>("");
 
   const validateFields = () => {
     let isValid = true;
@@ -73,6 +68,7 @@ const SignUp = () => {
   return (
     <View style={Style.container}>
       <Text style={Style.title}>SIGN UP</Text>
+      <View style={Style.inputContainer}>
       <View style={Style.cardContainer}>        
       <CardInput
           placeholder="Your Email"
@@ -80,16 +76,18 @@ const SignUp = () => {
           onChangeText={setEmail}
           error={!!emailError}
           icon={require('../assets/images/mail.png')}
+          style={{ marginBottom: 5 }}
         />
         {emailError ? <Text style={styles.errorMessage}>{emailError}</Text> : null}
         </View>
         <View style={Style.cardContainer}>      
     <CardInput
-        placeholder="Username"
+        placeholder="Your Username"
         value={username}
         onChangeText={setUsername}
         error={!!usernameError}
         icon={require('../assets/images/user.png')}
+        style={{ marginBottom: 5 }}
     />
     {usernameError ? <Text style={styles.errorMessage}>{usernameError}</Text> : null}
     </View>
@@ -101,13 +99,14 @@ const SignUp = () => {
         secureTextEntry
         error={!!passwordError}
         icon={require('../assets/images/lock.png')}
+        style={{ marginBottom: 5 }}
     />
     {passwordError ? <Text style={[styles.errorMessage, { marginTop: 0 }]}>{passwordError}</Text> : null}
     </View>
-    <View style={styles.cardContainer}>
-    <View style={styles.checkboxContainer}>
+    <View style={Style.cardContainer}>
+    <View style={Style.checkboxContainer}>
   <TouchableOpacity onPress={() => handleCheckbox(!acceptedTerms)}>
-    <View style={[styles.checkbox, acceptedTermsError && styles.checkboxError]}>
+    <View style={[Style.checkbox, acceptedTermsError && styles.checkboxError]}>
       {acceptedTerms ? (
         <MaterialIcons 
           name="check" 
@@ -117,7 +116,7 @@ const SignUp = () => {
       ) : null}
     </View>
       </TouchableOpacity>
-        <Text style={styles.checkboxLabel}>
+        <Text style={Style.checkboxLabel}>
           Agree To <Text style={styles.termsLink}>Terms and Conditions</Text>
         </Text>
         </View>
@@ -126,94 +125,48 @@ const SignUp = () => {
       <Text 
           style={styles.errorMessage}>{acceptedTermsError}</Text> : null}
           <Button text="CREATE ACCOUNT" onPress={handleCreateAccount} style={Style.button} />
-      <View style={styles.footer}>
+          </View>
+      <View style={Style.footer}>
         <Text 
-          style={styles.footerText}>Already have an account? </Text> 
-        <CardLink 
-          text="Sign In" 
-          onPress={() => navigation.navigate('Welcome')} 
-          style={styles.footerLink} />
+          style={Style.footerText}>Already have an account? </Text> 
+        <TouchableOpacity onPress={() => navigation.navigate('Welcome')}>
+          <Text style={styles.footerLink}>Sign In</Text>
+        </TouchableOpacity>
           </View>
     </View>
   );
   };
+export default SignUp;
 
- export default SignUp;
-  
 const styles = StyleSheet.create({
+  //nao tirar
   errorMessage: {
     color: Colors.error,
-    marginBottom: 10,
-    paddingLeft: 15
+    paddingLeft: 15,
   },
 
-  cardContainer: {
-    flexDirection: 'column',
-    marginTop: 10,
+  //nao tirar
+  termsLink: {
+    color: Colors.primary,
+    textDecorationLine: "underline",
+    fontWeight: "bold",
   },
-  
-  buttonText: {
-    color: '#fff',
-    fontSize: 16,
-  },
-  checkboxContainer: {
-    flexDirection: 'row',
-  },
-  checkbox: {
-    width: 20,
-    height: 20,
-    borderRadius: 5,
-    borderWidth: 2,
-    //justifyContent: '',
-    //alignItems: 'center',
-    backgroundColor: 'white',
-    marginRight: 10,
-    color: 'black'
-  },
+
   checkboxError: {
     borderColor: Colors.error,
   },
-  checkboxLabel: {
-    color: 'white',
-    fontWeight: 'bold',
 
-  },
-  termsLink: {
-    color: Colors.primary,
-    textDecorationLine: 'underline',
-    fontWeight: 'bold'
+  linkText: {
+    padding: 10,
+    color: "white",
   },
 
-    linkContainer: {
-    alignSelf: 'center',
-    marginTop: 20,
-    },
-    linkText: {
-      padding: 10,
-      color: 'white',
-      },
-
-  footer: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 15,
-    width: '100%',
-    flexDirection: 'row',
-    position: 'absolute',
-    bottom: 5,
-    borderTopWidth: 1,
-    borderTopColor: Colors.primary1,
-},
-
-  footerText: {
-    fontSize: 16,
-    color: 'white',
-},
-
+  //nao tirar
   footerLink: {
     color: Colors.primary1,
     padding: 5,
     fontSize: 16,
-    fontWeight: 'bold'
-  }
+    fontWeight: "bold",
+    textDecorationLine: "underline",
+  },
 });
