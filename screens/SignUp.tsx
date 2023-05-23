@@ -46,7 +46,11 @@ const SignUp = () => {
       setAcceptedTermsError('Please accept the Terms');
       isValid = false;
     } else {
+<<<<<<< Updated upstream
       setAcceptedTermsError = ('');
+=======
+      setAcceptedTermsError("");
+>>>>>>> Stashed changes
     }
   
     return isValid;

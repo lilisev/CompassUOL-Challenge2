@@ -3,6 +3,7 @@ import { TouchableOpacity, Text, StyleSheet } from "react-native";
 
 import Style from "../constants/style";
 
+
 interface ButtonProps {
   text: string;
   onPress: () => void;

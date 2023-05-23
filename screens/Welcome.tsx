@@ -43,7 +43,7 @@ const Welcome = () => {
 
   const handleLogin = () => {
     if (validateFields()) {
-      navigation.navigate("Home");
+      navigation.navigate("ProductList");
     }
   };
 
