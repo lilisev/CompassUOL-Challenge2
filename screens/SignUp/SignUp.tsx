@@ -3,10 +3,10 @@ import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { MaterialIcons } from "@expo/vector-icons";
 
-import Style from "../constants/style";
-import Colors from "../constants/colors";
-import Button from "../components/CardButton";
-import CardInput from "../components/CardInput";
+import Style from "../../constants/style";
+import Colors from "../../constants/colors";
+import Button from "../../components/CardButton/CardButton";
+import CardInput from "../../components/CardInput/CardInput";
 
 const SignUp = () => {
   const navigation = useNavigation();
@@ -46,7 +46,7 @@ const SignUp = () => {
       setAcceptedTermsError('Please accept the Terms');
       isValid = false;
     } else {
-      setAcceptedTermsError = ('');
+      setAcceptedTermsError('');
     }
   
     return isValid;
@@ -106,7 +106,7 @@ const SignUp = () => {
     <View style={Style.cardContainer}>
     <View style={Style.checkboxContainer}>
   <TouchableOpacity onPress={() => handleCheckbox(!acceptedTerms)}>
-    <View style={[Style.checkbox, acceptedTermsError && styles.checkboxError]}>
+    <View style={Style.checkbox}>
       {acceptedTerms ? (
         <MaterialIcons 
           name="check" 
