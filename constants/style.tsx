@@ -6,7 +6,7 @@ const Style = StyleSheet.create ({
       flex: 1,
       alignItems: 'center',
       justifyContent: 'center',
-      backgroundColor: Colors.colorBG
+      backgroundColor: Colors.colorBG,
     },
 
     title: {
@@ -15,27 +15,29 @@ const Style = StyleSheet.create ({
       fontSize: 32,
       fontWeight: 'bold',
       paddingTop: 100,
-      //justifyContent: "center",
     },
 
     inputContainer: {
       flex: 3,
       width: '105%',
-      alignItems: 'center',
+     flexDirection: 'column',
+     marginBottom: 20,
+     alignItems: 'center', 
+     paddingTop: 20,
     },
 
     input: {
-      width: '90%',
-      justifyContent: 'center',
-      height: 50,
       borderWidth: 1,
       borderColor: Colors.colorInput,
       borderRadius: 30,
-      marginBottom: 10,
       color: Colors.colorInputPlaceHolder,
-      backgroundColor: Colors.colorInput
+      backgroundColor: Colors.colorInput,
     },
-    
+
+    inputError: {
+      borderColor: Colors.error
+    },
+
     button: {
       width: '85%',
       height: 50,
@@ -54,8 +56,7 @@ const Style = StyleSheet.create ({
 
     cardContainer: {
       flexDirection: 'column',
-      //justifyContent: 'center',
-      marginVertical: 10
+      marginTop: 10
 
     },
     checkboxContainer: {
@@ -69,7 +70,7 @@ const Style = StyleSheet.create ({
       borderWidth: 2,
       backgroundColor: Colors.primary,
       marginRight: 10,
-      color: 'black'
+      color: 'black', 
     },
     
     checkboxLabel: {
@@ -90,6 +91,7 @@ const Style = StyleSheet.create ({
       borderTopColor: Colors.primary1,
     },
 
+    
     footerText: {
       fontSize: 16,
       color: 'white',
