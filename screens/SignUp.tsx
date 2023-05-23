@@ -3,10 +3,10 @@ import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { MaterialIcons } from "@expo/vector-icons";
 
-import Style from "../../constants/style";
-import Colors from "../../constants/colors";
-import Button from "../../components/CardButton/CardButton";
-import CardInput from "../../components/CardInput/CardInput";
+import Style from "../constants/style";
+import Colors from "../constants/colors";
+import Button from "../components/CardButton/CardButton";
+import CardInput from "../components/CardInput/CardInput";
 
 const SignUp = () => {
   const navigation = useNavigation();

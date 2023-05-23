@@ -8,11 +8,11 @@ import {
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
-import Style from "../../constants/style";
-import Colors from "../../constants/colors";
-import CardButton from "../../components/CardButton/CardButton";
-import CardLink from "../../components/CardLink/CardLink";
-import CardInput from "../../components/CardInput/CardInput";
+import Style from "../constants/style";
+import Colors from "../constants/colors";
+import CardButton from "../components/CardButton/CardButton";
+import CardLink from "../components/CardLink/CardLink";
+import CardInput from "../components/CardInput/CardInput";
 
 const Welcome = () => {
   const navigation = useNavigation();
