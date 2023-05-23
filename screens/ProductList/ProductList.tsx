@@ -39,17 +39,19 @@ const ProductList: React.FC = () => {
       <Text style={styleProductList.welcome}>Welcome</Text>
       <Text style={styleProductList.userName}>Compass</Text>
     </View>
-        <ScrollView style={styleProductList.scrollViewContainer}>
+    <View style={styleProductList.scrollViewContainer}>
+    <ScrollView >
           {productData.map((product) => (
             <View key={product.id} style={styleProductList.productContainer}>
-              <View style={styleProductList.product}>
-                <Text>{product.title}</Text>
+              <View style={styleProductList.cardProduct}>
+                <Text style={styleProductList.titleStyle}>{product.title}</Text>
                 <Image source={{uri: product.image}} style={styleProductList.productImage} />
-                <Text>{product.price}</Text>
+                <Text style={styleProductList.priceStyle}>{product.price}</Text>
               </View>
             </View>
           ))}
         </ScrollView>
+    </View>     
         <View style={styleProductList.tabBar}>
         <Text>icons home and cart</Text>
       </View>

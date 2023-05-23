@@ -28,18 +28,24 @@ const stylesProductList = StyleSheet.create({
     },
   
     productContainer: {
-      flexDirection: "row",
-      justifyContent: "space-between",
+      width: "100%",
       paddingHorizontal: 10,
       marginBottom: 10,
       flexWrap: "wrap"
     },
-    product: {
+    cardProduct: {
       width: "48%",
       height: 150,
       backgroundColor: "#eee",
       borderRadius: 5,
       marginBottom: 10,
+    },
+    
+
+    productImage: {
+      width: "100%",
+      height: "70%",
+      marginBottom: 5,
     },
   
     tabBar: {
